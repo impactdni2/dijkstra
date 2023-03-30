@@ -22,15 +22,15 @@ func TestArc(t *testing.T) {
 		t.Error("GetArc with no arcs failed (should 0,nil)")
 	}
 	v.AddArc(100, 1)
-	if !reflect.DeepEqual(v.arcs, map[int]int64{100: 1}) {
+	if !reflect.DeepEqual(v.arcs, map[int]float64{100: 1}) {
 		t.Error("AddArc failed to add arc")
 	}
 	v.AddArc(100, 2)
-	if !reflect.DeepEqual(v.arcs, map[int]int64{100: 2}) {
+	if !reflect.DeepEqual(v.arcs, map[int]float64{100: 2}) {
 		t.Error("AddArc failed to overwrite arc")
 	}
 	v.AddArc(101, 1)
-	if !reflect.DeepEqual(v.arcs, map[int]int64{100: 2, 101: 1}) {
+	if !reflect.DeepEqual(v.arcs, map[int]float64{100: 2, 101: 1}) {
 		t.Error("AddArc failed to add second arc")
 	}
 	dist, ok = v.GetArc(100)
@@ -38,7 +38,7 @@ func TestArc(t *testing.T) {
 		t.Error("GetArc failed")
 	}
 	v.RemoveArc(100)
-	if !reflect.DeepEqual(v.arcs, map[int]int64{101: 1}) {
+	if !reflect.DeepEqual(v.arcs, map[int]float64{101: 1}) {
 		t.Error("RemoveArc failed to remove arc")
 	}
 	_, ok = v.GetArc(100)

@@ -118,22 +118,22 @@ func getAGraph() Graph {
 	return Graph{
 		0, false,
 		[]Vertex{
-			{0, 0, []int{-1}, map[int]int64{
+			{0, 0, []int{-1}, map[int]float64{
 				1: 4,
 				2: 2},
 			},
-			{1, 0, []int{-1}, map[int]int64{
+			{1, 0, []int{-1}, map[int]float64{
 				3: 2,
 				2: 3,
 				4: 3},
 			},
-			{2, 0, []int{-1}, map[int]int64{
+			{2, 0, []int{-1}, map[int]float64{
 				1: 1,
 				3: 4,
 				4: 5},
 			},
-			{3, 0, []int{-1}, map[int]int64{}},
-			{4, 0, []int{-1}, map[int]int64{
+			{3, 0, []int{-1}, map[int]float64{}},
+			{4, 0, []int{-1}, map[int]float64{
 				3: 1},
 			},
 		},
@@ -148,26 +148,26 @@ func getBGraph() Graph {
 	return Graph{
 		0, false,
 		[]Vertex{
-			{0, 0, []int{-1}, map[int]int64{
+			{0, 0, []int{-1}, map[int]float64{
 				1: 4,
 				2: 2},
 			},
-			{1, 0, []int{-1}, map[int]int64{
+			{1, 0, []int{-1}, map[int]float64{
 				3: 2,
 				2: 3,
 				4: 3},
 			},
-			{2, 0, []int{-1}, map[int]int64{
+			{2, 0, []int{-1}, map[int]float64{
 				1: 1,
 				3: 4,
 				4: 5},
 			},
-			{3, 0, []int{-1}, map[int]int64{
+			{3, 0, []int{-1}, map[int]float64{
 				5: 10}},
-			{4, 0, []int{-1}, map[int]int64{
+			{4, 0, []int{-1}, map[int]float64{
 				3: 1},
 			},
-			{5, 0, []int{-1}, map[int]int64{
+			{5, 0, []int{-1}, map[int]float64{
 				3: 10},
 			},
 		},
@@ -188,26 +188,26 @@ func getBSol() BestPath {
 func getCGraph() Graph {
 	return Graph{0, false,
 		[]Vertex{
-			{0, 0, []int{-1}, map[int]int64{
+			{0, 0, []int{-1}, map[int]float64{
 				1: -4,
 				2: 2},
 			},
-			{1, 0, []int{-1}, map[int]int64{
+			{1, 0, []int{-1}, map[int]float64{
 				3: 2,
 				2: -3,
 				4: 3},
 			},
-			{2, 0, []int{-1}, map[int]int64{
+			{2, 0, []int{-1}, map[int]float64{
 				1: 1,
 				3: 4,
 				4: 5},
 			},
-			{3, 0, []int{-1}, map[int]int64{
+			{3, 0, []int{-1}, map[int]float64{
 				5: -10}},
-			{4, 0, []int{-1}, map[int]int64{
+			{4, 0, []int{-1}, map[int]float64{
 				3: 1},
 			},
-			{5, 0, []int{-1}, map[int]int64{
+			{5, 0, []int{-1}, map[int]float64{
 				3: -10},
 			},
 		},
@@ -222,13 +222,13 @@ func getGGraph() (Graph, map[string]int) {
 	return Graph{
 			0, false,
 			[]Vertex{
-				{0, 0, []int{-1}, map[int]int64{
+				{0, 0, []int{-1}, map[int]float64{
 					1: 2},
 				},
-				{1, 0, []int{-1}, map[int]int64{
+				{1, 0, []int{-1}, map[int]float64{
 					2: 5},
 				},
-				{2, 0, []int{-1}, map[int]int64{
+				{2, 0, []int{-1}, map[int]float64{
 					0: 1,
 					1: 1},
 				},
@@ -252,19 +252,19 @@ func getIGraph() Graph {
 	return Graph{
 		0, false,
 		[]Vertex{
-			{0, 0, []int{-1}, map[int]int64{
+			{0, 0, []int{-1}, map[int]float64{
 				1: 2},
 			},
-			{1, 0, []int{-1}, map[int]int64{
+			{1, 0, []int{-1}, map[int]float64{
 				2: 3},
 			},
-			{2, 0, []int{-1}, map[int]int64{
+			{2, 0, []int{-1}, map[int]float64{
 				3: 4},
 			},
-			{3, 0, []int{-1}, map[int]int64{
+			{3, 0, []int{-1}, map[int]float64{
 				2: 5},
 			},
-			{4, 0, []int{-1}, map[int]int64{}},
+			{4, 0, []int{-1}, map[int]float64{}},
 		},
 		priorityQueueNewShort(), //newLinkedList(),
 		map[string]int{},

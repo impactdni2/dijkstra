@@ -9,14 +9,15 @@ import (
 	"strings"
 )
 
-//Import imports a graph from the specified file returns the Graph, a map for
+// Import imports a graph from the specified file returns the Graph, a map for
 // if the nodes are not integers and an error if needed.
 func Import(filename string) (g Graph, err error) {
 	g.usingMap = false
 	var lowestIndex int
 	var i int
 	var arc int
-	var dist int64
+	var idist int64
+	var dist float64
 	var ok bool
 	got, err := ioutil.ReadFile(filename)
 	if err != nil {
@@ -50,7 +51,7 @@ func Import(filename string) (g Graph, err error) {
 			g.Verticies = append(g.Verticies, make([]Vertex, 1+i-len(g.Verticies))...)
 			for ; temp < len(g.Verticies); temp++ {
 				g.Verticies[temp].ID = temp
-				g.Verticies[temp].arcs = map[int]int64{}
+				g.Verticies[temp].arcs = map[int]float64{}
 				g.Verticies[temp].bestVerticies = []int{-1}
 			}
 		}
@@ -64,7 +65,8 @@ func Import(filename string) (g Graph, err error) {
 				err = ErrWrongFormat
 				return
 			}
-			dist, err = strconv.ParseInt(got[1], 10, 64)
+			idist, err = strconv.ParseInt(got[1], 10, 64)
+			dist = float64(idist)
 			if err != nil {
 				err = ErrWrongFormat
 				return
@@ -90,7 +92,7 @@ func Import(filename string) (g Graph, err error) {
 	return
 }
 
-//ExportToFile exports the verticies to file currently does not take into account
+// ExportToFile exports the verticies to file currently does not take into account
 // mappings (from string to int)
 func (g Graph) ExportToFile(filename string) error {
 	var i string

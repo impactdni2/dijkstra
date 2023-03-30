@@ -4,18 +4,18 @@ import (
 	"math"
 )
 
-//BestPath contains the solution of the most optimal path
+// BestPath contains the solution of the most optimal path
 type BestPath struct {
-	Distance int64
+	Distance float64
 	Path     []int
 }
 
-//Shortest calculates the shortest path from src to dest
+// Shortest calculates the shortest path from src to dest
 func (g *Graph) Shortest(src, dest int) (BestPath, error) {
 	return g.evaluate(src, dest, true)
 }
 
-//Longest calculates the longest path from src to dest
+// Longest calculates the longest path from src to dest
 func (g *Graph) Longest(src, dest int) (BestPath, error) {
 	return g.evaluate(src, dest, false)
 }
@@ -36,11 +36,11 @@ func (g *Graph) setup(shortest bool, src int, list int) {
 	// and set the defaults *almost* as bad
 	// set all best verticies to -1 (unused)
 	if shortest {
-		g.setDefaults(int64(math.MaxInt64)-2, -1)
-		g.best = int64(math.MaxInt64)
+		g.setDefaults(math.MaxFloat64-2, -1)
+		g.best = math.MaxFloat64
 	} else {
-		g.setDefaults(int64(math.MinInt64)+2, -1)
-		g.best = int64(math.MinInt64)
+		g.setDefaults(math.MinInt64+2, -1)
+		g.best = math.MinInt64
 	}
 	//Set the distance of initial vertex 0
 	g.Verticies[src].distance = 0
